@@ -1,0 +1,6 @@
+#! /bin/bash
+# Display date, sleep 5 sec, then show current directory
+
+date
+sleep 5s
+pwd
