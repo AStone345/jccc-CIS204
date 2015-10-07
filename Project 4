@@ -1,0 +1,37 @@
+#! /bin/sh
+
+# moves files into .trash
+# options:  -l : lists current contents, -p : removes .trash and all files within
+# Usage: trash -l | -p | {filename}*
+
+if [ $# -lt 1 ]
+then
+  echo "Usage: trash -l | -p | {filename}* >&2
+  exit 1
+elif [ $1 = '-l' ]
+then
+  if [ -d $HOME/.trash ]
+  then
+    ls $HOME/.trash
+  else
+    echo There are no files in trash
+  fi
+elif [ $1 = '-p' ]
+then
+  if [ -d $HOME/.trash ]
+  then
+    rm -r $HOME/.trash
+  fi
+else
+  for file in $*
+  do 
+    if [ -f $file ]
+    then
+      if [ ! -d $HOME/.trash ]
+      then
+        mkdir $HOME/.trash
+      fi
+      mv $file $HOME/.trash
+    fi
+  done
+fi
