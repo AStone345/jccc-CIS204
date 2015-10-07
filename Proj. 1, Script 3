@@ -1,0 +1,4 @@
+#! /bin/bash
+# count of lines with 'grep' on grep man page
+
+man grep | grep -c 'grep'
