@@ -1,0 +1,6 @@
+#! /bin/bash
+# display the date, username and current login shell
+
+echo Current date: $(date)
+echo Username: $USER
+echo Login shell: $SHELL
