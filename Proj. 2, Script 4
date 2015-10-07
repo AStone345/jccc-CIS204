@@ -1,0 +1,10 @@
+#! /bin/bash
+#takes input then prints PID, process shell, # of param, list of param, param 1, param 10
+
+echo The process id \(pid\) is "$$".
+echo The process shell is "$0".
+echo The number of parameters is "$#".
+echo The list of parameters is "$*".
+echo Another list of parameters is "$@".
+echo Parameter 1 is "$1".
+echo Parameter 10 is "${10}".
