@@ -1,0 +1,4 @@
+#! /bin/bash
+# List of process lines with username displayed
+
+ps -ef | grep $user
