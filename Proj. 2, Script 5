@@ -1,0 +1,12 @@
+#! /bin/bash
+# clear screen, display # of sessions user is in, compare 2 files with cmp and diff and sort last file
+
+clear;
+
+echo Number of sessions I am in:
+who | grep astone4 | wc -l
+
+diff "$1" "$2"
+cmp "$1" "$2"
+
+sort "$2"
