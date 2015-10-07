@@ -1,0 +1,10 @@
+#! /bin/bash
+# starts 3 processes in the background, waits until done, prints message
+
+sleep 30&
+sleep 20&
+sleep 10&
+
+wait
+
+echo All are done!
