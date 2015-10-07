@@ -1,0 +1,34 @@
+#! /bin/bash
+# start chain of a.sh -> b.sh -> c.sh running
+
+./a.sh
+
+
+____________________________________________________________________
+# a.sh
+
+#! /bin/bash
+#Display name, execute ps, call b.sh
+
+echo "$0"
+ps
+exec ./b.sh
+
+_______________________________________________________________________
+# b.sh
+
+#! /bin/bash
+# display name, execute ps, call c.sh
+
+echo "$0"
+ps
+exec ./c.sh
+
+______________________________________________________________________
+#c.sh
+
+#! /bin/bash
+# Display name, execute ps
+
+echo "$0"
+ps
