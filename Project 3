@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# Find the employees from dept 100, increase yrs emp. by 1, sort the file
+# Output in columns with spaces between fields
+
+awk -F: '$2 == 100 {$5++; printf "%-15s %10-s %-12s %-5s\n", $3, $4, $1, $5}' employees | sort
