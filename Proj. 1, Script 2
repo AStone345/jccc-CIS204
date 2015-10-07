@@ -1,0 +1,4 @@
+#! /bin/bash
+# Find files, starting in HOME, that have been modified in last 10 min.
+
+find /home/students/astone4 -mmin -10
