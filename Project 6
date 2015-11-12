@@ -1,0 +1,27 @@
+#!/bin/ksh
+
+# creates a menu for the trash script created in the Bourne shell lesson
+
+
+
+echo Trash Menu
+
+select choice in list purge "trash files" "exit"
+do
+        case $choice in
+        list)
+                ~trash -l
+                ;;
+        purge)
+                ~trash -p
+                ;;
+        "trash files")
+                read response?" List the files to trash with a space between them: "
+                        ~trash $response
+                ;;
+        exit)
+                :
+                break;;
+        esac
+        REPLY=null
+done
