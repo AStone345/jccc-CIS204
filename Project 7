@@ -1,0 +1,25 @@
+#! /bin/bash
+
+# moves file to a destination. If the destination file exists, it will add an
+#       index number to the file name.
+
+if (( $# < 2 ))
+then
+        echo Usage: move source_file destination_file
+elif [ ! -e $1 ]
+then
+        echo $1 does not exist, cannot move file
+        exit 1
+elif [ ! -e $2 ]
+then
+        mv $1 $2
+else
+        index=0
+        dest=$2
+        while [ -e $dest ]
+        do
+                (( index=$index + 1 ))
+                dest="$2.$index"
+        done
+        mv $1 $dest
+fi
